@@ -11,6 +11,7 @@ const store = createStore({
     addToCart(state, payload) {
       const existingItem = state.items.find((item) => item.id === payload.id);
 
+       //increase count number
       state.count = state.count + payload.quantity;
 
       if (existingItem) {
@@ -30,6 +31,9 @@ const store = createStore({
       const indexNumber = state.items.findIndex(
         (item) => item.id === payload.id
       );
+
+      //reduce count number
+      state.count = state.count - 1;
 
       if (existingItem.quantity === 1) {
         state.items.splice(indexNumber, 1);

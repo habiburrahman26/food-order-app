@@ -60,8 +60,11 @@
 
       <p class="font-medium text-lg">${{ item.totalPrice }}</p>
     </div>
-    <div class="text-right">
+    <div class="text-right" v-if="cartItems.length > 0">
       <p class="text-lg font-medium">Total Price: ${{ getTotalPrice }}</p>
+    </div>
+    <div v-if="cartItems.length === 0">
+      <p class="text-center text-lg font-medium">No Item added yet!</p>
     </div>
   </div>
 </template>

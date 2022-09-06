@@ -1,5 +1,12 @@
 <template>
-  <section class="pb-10">
+  <section class="pb-10 overflow-hidden">
+    <div class="overflow-hidden w-[110%] h-[30rem]">
+      <img
+        src="../assets/meals.jpg"
+        alt=""
+        class="w-full h-full object-cover -rotate-3 -translate-y-16 -translate-x-4"
+      />
+    </div>
     <div
       class="bg-[#383838] text-white text-center relative max-w-3xl px-8 py-10 rounded -top-20 mx-auto -mt-14 shadow-md shadow-gray-800/50"
     >
@@ -22,7 +29,7 @@
       {{ error }}
     </p>
     <food-item
-    v-else
+      v-else
       v-for="food in foods"
       :key="food.idMeal"
       :id="food.idMeal"
