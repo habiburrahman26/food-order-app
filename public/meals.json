@@ -1,0 +1,60 @@
+[
+  {
+      "idMeal": "52810",
+      "strMeal": "Osso Buco alla Milanese",
+      "strDrinkAlternate": null,
+      "strCategory": "Miscellaneous",
+      "strArea": "Italian",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/wwuqvt1487345467.jpg",
+      "strTags": null,
+      "strYoutube": "https://www.youtube.com/watch?v=9GUTC2Qwrf0",
+      "strSource": "https://www.cookstr.com/Meat/Osso-Buco-alla-Milanese",
+      "strImageSource": null,
+      "strCreativeCommonsConfirmed": null,
+      "dateModified": null,
+      "price":"80"
+  },
+  {
+      "idMeal": "52939",
+      "strMeal": "Callaloo Jamaican Style",
+      "strDrinkAlternate": null,
+      "strCategory": "Miscellaneous",
+      "strArea": "Jamaican",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/ussyxw1515364536.jpg",
+      "strTags": "Savory",
+      "strYoutube": "https://www.youtube.com/watch?v=bCr3GasJWwE",
+      "strSource": "https://www.africanbites.com/callaloo-jamaican-style/",
+      "strImageSource": null,
+      "strCreativeCommonsConfirmed": null,
+      "dateModified": null,
+      "price":"110"
+  },
+  {
+      "idMeal": "52982",
+      "strMeal": "Spaghetti alla Carbonara",
+      "strDrinkAlternate": null,
+      "strCategory": "Pasta",
+      "strArea": "Italian",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg",
+      "strTags": "Pasta,BBQ,Breakfast",
+      "strYoutube": "https://www.youtube.com/watch?v=_T6jkRvhlkk",
+      "strSource": "https://www.bbcgoodfood.com/recipes/ultimate-spaghetti-carbonara-recipe",
+      "strImageSource": null,
+      "strCreativeCommonsConfirmed": null,
+      "dateModified": null,
+      "price":"140"
+  },
+  {
+      "idMeal": "52979",
+      "strMeal": "Bitterballen (Dutch meatballs)",
+      "strDrinkAlternate": null,
+      "strCategory": "Beef",
+      "strArea": "Dutch",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/lhqev81565090111.jpg",
+      "strSource": "https://www.holland.com/global/tourism/information/traditional-dutch-food/bitterballen.htm",
+      "strImageSource": null,
+      "strCreativeCommonsConfirmed": null,
+      "dateModified": null,
+      "price":"75"
+  }
+]

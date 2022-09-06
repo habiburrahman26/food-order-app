@@ -8,6 +8,10 @@ const route = createRouter({
       path: "/",
       component: Home,
     },
+    {
+      path: "/login",
+      component: Home,
+    },
   ],
 });
 
