@@ -11,12 +11,20 @@
         type="email"
         name="email"
         v-model.trim="email"
-        @blur="validInput"
+        @blur="validEmail"
       />
+      <p v-if="emailIsValid === 'invalid'" class="text-pink-600 text-sm">
+        Please enter valid email
+      </p>
     </div>
     <div class="w-full px-8 pt-2">
       <label class="pb-1 inline-block" for="password">Password</label>
-      <input class="input" type="password" name="password" v-model.trim="password" />
+      <input
+        class="input"
+        type="password"
+        name="password"
+        v-model.trim="password"
+      />
     </div>
     <div class="text-center pt-8">
       <button-component
@@ -43,12 +51,10 @@ export default {
       password: "",
       isLoading: false,
       error: null,
+      emailIsValid: "pending",
     };
   },
   methods: {
-    validInput() {
-      if(this.email){}
-    },
     formSubmit() {
       this.isLoading = true;
       createUserWithEmailAndPassword(auth, this.email, this.password)
@@ -65,6 +71,13 @@ export default {
           this.error = error.code;
           this.isLoading = false;
         });
+    },
+    validEmail() {
+      if (this.email === "") {
+        this.emailIsValid = "invalid";
+      } else {
+        this.emailIsValid = "valid";
+      }
     },
   },
 };
