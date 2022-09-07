@@ -6,11 +6,17 @@
     <h2 class="text-2xl font-semibold pt-6 text-center mb-6">SignUp</h2>
     <div class="w-full px-8">
       <label for="email" class="pb-1 inline-block">Email</label>
-      <input class="input" type="email" name="email" v-model="email" />
+      <input
+        class="input"
+        type="email"
+        name="email"
+        v-model.trim="email"
+        @blur="validInput"
+      />
     </div>
     <div class="w-full px-8 pt-2">
       <label class="pb-1 inline-block" for="password">Password</label>
-      <input class="input" type="password" name="password" v-model="password" />
+      <input class="input" type="password" name="password" v-model.trim="password" />
     </div>
     <div class="text-center pt-8">
       <button-component
@@ -40,12 +46,16 @@ export default {
     };
   },
   methods: {
+    validInput() {
+      if(this.email){}
+    },
     formSubmit() {
       this.isLoading = true;
       createUserWithEmailAndPassword(auth, this.email, this.password)
         .then((userCredential) => {
           const user = userCredential.user;
           if (user.email) {
+            localStorage.setItem("token", user.accessToken); // store the token in local storage
             this.$router.replace("/");
           }
           this.isLoading = false;

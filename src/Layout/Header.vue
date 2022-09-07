@@ -70,6 +70,7 @@ export default {
       }
     },
     signOut() {
+      localStorage.removeItem("token");
       signOut(auth);
     },
   },
@@ -80,7 +81,7 @@ export default {
   },
   mounted() {
     onAuthStateChanged(auth, (user) => {
-      if (user) {
+      if (user || localStorage.getItem("token")) {
         this.isAuthenticate = true;
       } else {
         this.isAuthenticate = false;

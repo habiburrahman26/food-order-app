@@ -1,6 +1,7 @@
 <template>
   <div
-    class="w-[550px] absolute top-[85px] right-12 z-50 bg-white px-6 py-3 rounded-lg text-gray-800 shadow-lg"
+    v-if="!confirm"
+    class="w-[550px] mx-auto mt-16 bg-white px-6 py-3 rounded-lg text-gray-800"
   >
     <div
       class="border-b-2 border-red-800 py-4 flex justify-between items-center"
@@ -60,20 +61,31 @@
 
       <p class="font-medium text-lg">${{ item.totalPrice }}</p>
     </div>
-    <div class="text-right pb-4" v-if="cartItems.length > 0">
+    <div class="text-right pb-4">
       <p class="text-lg font-medium">Total Price: ${{ getTotalPrice }}</p>
       <div class="text-center mt-10">
-        <router-link to="/placeOrder" class="px-16 py-2 bg-orange-700 hover:bg-orange-800 transition-all rounded-full text-white">Place Order</router-link>
+        <button
+          @click="confirmOrder"
+          to="/placeOrder"
+          class="px-16 py-2 bg-orange-700 hover:bg-orange-800 transition-all rounded-full text-white"
+        >
+          Confirm Order
+        </button>
       </div>
     </div>
-    <div v-if="cartItems.length === 0">
-      <p class="text-center text-lg font-medium">No Item added yet!</p>
-    </div>
+  </div>
+  <div v-else class="bg-green-600 w-[500px] px-10 py-4 mx-auto mt-20">
+    <p class="text-white font-semibold text-lg">Order placed Successfully</p>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      confirm: false,
+    };
+  },
   computed: {
     cartItems() {
       return this.$store.getters.getItems;
@@ -83,18 +95,9 @@ export default {
     },
   },
   methods: {
-    addToCart(id, name, price) {
-      this.$store.commit("addToCart", {
-        id: id,
-        name: name,
-        price: price,
-        quantity: 1,
-      });
-    },
-    removeItem(id) {
-      this.$store.commit("removeFromCart", {
-        id: id,
-      });
+    confirmOrder() {
+      this.$store.commit("confirmOrder");
+      this.confirm = true;
     },
   },
 };

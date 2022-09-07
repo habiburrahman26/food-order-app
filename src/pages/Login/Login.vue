@@ -46,6 +46,7 @@ export default {
         .then((userCredential) => {
           const user = userCredential.user;
           if (user.email) {
+            localStorage.setItem("token", user.accessToken);
             this.$router.replace("/");
           }
           this.isLoading = false;

@@ -11,7 +11,7 @@ const store = createStore({
     addToCart(state, payload) {
       const existingItem = state.items.find((item) => item.id === payload.id);
 
-       //increase count number
+      //increase count number
       state.count = state.count + payload.quantity;
 
       if (existingItem) {
@@ -43,6 +43,9 @@ const store = createStore({
           +existingItem.totalPrice - +existingItem.price;
         state.items[indexNumber] = existingItem;
       }
+    },
+    confirmOrder(state) {
+      (state.items = []), (state.count = 0);
     },
   },
   getters: {
